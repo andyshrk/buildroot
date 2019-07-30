@@ -2341,6 +2341,7 @@ menu "Miscellaneous"
 	source "package/xmrig/Config.in"
 	source "package/xutil_util-macros/Config.in"
 	source "package/z3/Config.in"
+	source "package/io/Config.in"
 endmenu
 
 menu "Networking applications"
