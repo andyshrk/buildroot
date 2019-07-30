@@ -1,0 +1,7 @@
+config BR2_PACKAGE_IO
+	bool "Raw memory i/o utility"
+	help
+	  A utility for read/write memory/register,
+	  you shoud make sure CONFIG_DEVMEM is enable in you linux kernel.
+
+	  https://github.com/andyshrk/io.git
