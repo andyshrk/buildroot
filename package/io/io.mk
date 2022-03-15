@@ -5,7 +5,7 @@
 ################################################################################
 
 IO_VERSION = master
-IO_SITE = $(call github,rockchip-linux,io,$(IO_VERSION))
+IO_SITE = $(call github,andyshrk,io,$(IO_VERSION))
 IO_LICENSE = GPL-2.0+
 IO_LICENSE_FILES = COPYING.GPL
 
