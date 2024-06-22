@@ -55,3 +55,13 @@ Baudrate for this board is 1500000.
 Login:
 ------
 Enter 'root' as login user, and the prompt is ready.
+
+Network:
+-------
+WIFI:     Cool Pi 4B has a aic8800 sdio wifi on board, but
+          aic8800 is not supported by linux mainine yet.
+Ethernet: A RJ-45 interface drivered by PCIE Realtek Ethernet adapter R8169.
+          So we can login it by ssh: ssh root@172.16.12.166
+          Remember to replace you own ip addres on this board.
+
+Eanble Wayland Desktop: weston --backend=drm-backend.so -i 0
