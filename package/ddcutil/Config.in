@@ -1,0 +1,8 @@
+config BR2_PACKAGE_DDCUTIL
+    bool "ddcutil"
+    select BR2_PACKAGE_JANSSON
+    select BR2_PACKAGE_LIBGLIB2
+    select BR2_PACKAGE_LIBUSB
+    help
+      ddcutil is a utility to control DDC/CI monitors.
+      https://github.com/rockowitz/ddcutil
