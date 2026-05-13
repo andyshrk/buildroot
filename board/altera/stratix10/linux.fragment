@@ -1,0 +1,63 @@
+# SoCFPGA Stratix 10 kernel config fragment
+# Applied on top of arm64 defconfig
+
+# SoC support
+CONFIG_ARCH_INTEL_SOCFPGA=y
+
+CONFIG_ARM_PSCI_FW=y
+
+# Stratix 10 SoCDK uses Cortex-A53 cores. Keep the arm64 memory model on the
+# conservative 48-bit path; the arm64 default config may otherwise enable
+# 52-bit VA/PA and LPA2 when the toolchain supports it.
+CONFIG_ARM64_VA_BITS_48=y
+# CONFIG_ARM64_VA_BITS_52 is not set
+CONFIG_ARM64_PA_BITS_48=y
+# CONFIG_ARM64_PA_BITS_52 is not set
+# CONFIG_ARM64_LPA2 is not set
+
+# Ethernet - STMMAC with SoCFPGA glue
+CONFIG_STMMAC_ETH=y
+CONFIG_STMMAC_PLATFORM=y
+CONFIG_DWMAC_SOCFPGA=y
+
+# Ethernet PHY
+CONFIG_MICREL_PHY=y
+
+# MMC (Synopsys Designware)
+CONFIG_MMC=y
+CONFIG_MMC_DW=y
+CONFIG_MMC_DW_PLTFM=y
+
+# USB
+CONFIG_USB=y
+CONFIG_USB_DWC2=y
+CONFIG_USB_STORAGE=y
+
+# I2C
+CONFIG_I2C=y
+CONFIG_I2C_DESIGNWARE_CORE=y
+CONFIG_I2C_DESIGNWARE_PLATFORM=y
+
+# SPI / QSPI
+CONFIG_SPI=y
+CONFIG_SPI_CADENCE_QUADSPI=y
+CONFIG_MTD=y
+CONFIG_MTD_SPI_NOR=y
+
+# Watchdog
+CONFIG_DW_WATCHDOG=y
+
+# GPIO
+CONFIG_GPIOLIB=y
+CONFIG_GPIO_DWAPB=y
+
+# DRM (for modetest)
+CONFIG_DRM=y
+
+# Filesystem
+CONFIG_EXT4_FS=y
+CONFIG_DEBUG_FS=y
+
+# Pinctrl
+CONFIG_PINCTRL=y
+CONFIG_PINCTRL_SINGLE=y

@@ -1,0 +1,26 @@
+#!/bin/sh
+
+CONFIG=/etc/default/ethaddr
+INTERFACE=eth0
+ETHADDR=02:11:22:33:44:55
+
+[ -r "$CONFIG" ] && . "$CONFIG"
+
+case "$1" in
+	start|restart|reload)
+		if ! ip link show dev "$INTERFACE" >/dev/null 2>&1; then
+			exit 0
+		fi
+
+		ip link set dev "$INTERFACE" down || true
+		ip link set dev "$INTERFACE" address "$ETHADDR"
+		;;
+	stop)
+		;;
+	*)
+		echo "Usage: $0 {start|stop|restart|reload}"
+		exit 1
+		;;
+esac
+
+exit 0
